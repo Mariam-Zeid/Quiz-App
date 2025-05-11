@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ?========================== Fontawesome ========================== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- ?========================== Animate CSS ========================== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- ?========================== CSS File ========================== -->
+    <link rel="stylesheet" href="assets/css/all.css" />
+
+    <title>Quizy - Test Your Knowledge</title>
+    <link
+      rel="shortcut icon"
+      href="assets/imgs/favicon.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <!-- ?========================== Loading Screen ========================== -->
+    <div class="loading-screen show">
+      <span class="loader"></span>
+    </div>
+
+    <main>
+      <!-- ?========================== Quiz Form ========================== -->
+      <div class="quiz-settings">
+        <h1 class="primary-heading">Welcome to Quizy</h1>
+
+        <div class="wrapper">
+          <div class="img-wrapper">
+            <img
+              src="assets/imgs/hero.webp"
+              alt="quizy logo"
+              class="hero-img w-100"
+            />
+          </div>
+
+          <div class="form-wrapper">
+            <form id="quizForm">
+              <div class="dropdown" id="categoryDropdown">
+                <div class="dropdown-toggle">
+                  <p>Category</p>
+                  <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <div class="dropdown-item" data-value="9">
+                    General Knowledge
+                  </div>
+                  <div class="dropdown-item" data-value="15">
+                    Entertainment: Video Games
+                  </div>
+                  <div class="dropdown-item" data-value="18">
+                    Science: Computers
+                  </div>
+                  <div class="dropdown-item" data-value="19">
+                    Science: Mathematics
+                  </div>
+                  <div class="dropdown-item" data-value="21">Sports</div>
+                  <div class="dropdown-item" data-value="25">Art</div>
+                  <div class="dropdown-item" data-value="27">Animals</div>
+                </div>
+              </div>
+              <div class="dropdown" id="difficultyDropdown">
+                <div class="dropdown-toggle">
+                  <p>Difficulty</p>
+                  <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <div class="dropdown-item" data-value="easy">Easy</div>
+                  <div class="dropdown-item" data-value="medium">Medium</div>
+                  <div class="dropdown-item" data-value="hard">Hard</div>
+                </div>
+              </div>
+              <div class="range-wrapper">
+                <p id="rangeNumber">Total Questions: 10</p>
+                <input
+                  type="range"
+                  name="range"
+                  id="rangeInput"
+                  min="5"
+                  max="50"
+                  step="5"
+                  value="10"
+                />
+              </div>
+              <button type="submit" class="btn">start quiz</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- ?========================== Question Card ========================== -->
+      <div class="question-card">
+        <div class="progress-wrapper">
+          <progress class="questions-progress" max="100" value="0"></progress>
+        </div>
+
+        <div class="question-header">
+          <div class="question-info">
+            <p class="question-category">Category: General</p>
+            <p class="quiz-score">Score: 5</p>
+          </div>
+
+          <div class="circular-progress">
+            <svg class="progress-ring" width="50" height="50">
+              <circle class="track" r="20" cx="25" cy="25" />
+              <circle class="timer-progress" r="20" cx="25" cy="25" />
+            </svg>
+            <div id="timeLeft">15</div>
+          </div>
+        </div>
+
+        <div class="question-wrapper"></div>
+        <div class="action-btns-wrapper">
+          <button class="btn next-question-btn">next question</button>
+          <button class="btn quit-btn">quit quiz</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- ?========================== Result Modal ========================== -->
+    <div class="result-modal modal">
+      <div class="wrapper">
+        <div class="modal-header">
+          <h2 class="modal-title">Quiz Result</h2>
+          <div class="modal-close">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
+        <div class="modal-body">
+          <p class="result-message"></p>
+          <button class="btn again-btn">play again</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ?========================== Confirm Modal ========================== -->
+    <div class="confirm-modal modal">
+      <div class="wrapper">
+        <div class="modal-header">
+          <h2 class="modal-title">Confirm Exit</h2>
+          <div class="modal-close">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
+        <div class="modal-body">
+          <p class="modal-message">Are you sure you want to quit?</p>
+          <div class="btns-wrapper">
+            <button class="btn cancel-btn">cancel</button>
+            <button class="btn quit-btn">quit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ?========================== JS File ========================== -->
+    <script src="assets/js/index.js"></script>
+  </body>
+</html>

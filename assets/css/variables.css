@@ -1,0 +1,12 @@
+:root {
+  --background: #fff;
+  --foreground: #030712;
+
+  --primary: #7c3aed;
+  --success: #22c55e;
+  --fail: #ef4444;
+  --light-gray: #f3f4f6;
+  
+  --border: #e5e7eb;
+  
+}
